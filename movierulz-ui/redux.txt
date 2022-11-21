@@ -1,0 +1,6 @@
+Actions ->(dispatches) Store <-> Reducer 
+
+1. Define Store 
+2. Define Actions
+3. Create Reducer
+4. Set up Store
