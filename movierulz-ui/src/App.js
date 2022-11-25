@@ -1,14 +1,15 @@
 import "./App.css";
 import React from "react";
 import Button from "@mui/material/Button";
-import { store } from "./redux/setup/store";
-import * as actionCreator from "./redux/setup/actionCreator";
+import { store } from "./redux/setup/setUpStore";
+import * as commonActionCreator from "./redux/common/actionCreator";
+import { connect } from "react-redux"
 
-function App() {
+const App =  (props) => {
   const Hi = (event) => {
     console.log("Hii" + event.target);
     console.log(store.getState());
-    store.dispatch(actionCreator.enableDarkMode());
+    store.dispatch(commonActionCreator.userLoggedIn());
     console.log(store.getState());
   };
   return (
@@ -26,4 +27,12 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    user: state.user,
+    viewMode: state.viewMode,
+  };
+};
+export default connect(mapStateToProps)(App);
+
+//export default App;

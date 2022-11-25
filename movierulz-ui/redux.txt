@@ -4,3 +4,6 @@ Actions ->(dispatches) Store <-> Reducer
 2. Define Actions
 3. Create Reducer
 4. Set up Store
+
+Info on Redux and Persist Reducer :-
+https://blog.logrocket.com/persist-state-redux-persist-redux-toolkit-react/
