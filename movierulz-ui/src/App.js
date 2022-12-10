@@ -1,36 +1,23 @@
 import "./App.css";
 import React from "react";
-import Button from "@mui/material/Button";
-import { store } from "./redux/setup/setUpStore";
-import * as commonActionCreator from "./redux/common/actionCreator";
-import { connect } from "react-redux"
+import { connect } from "react-redux";
+import Typography from "@mui/material/Typography";
+import AppBar from "./components/AppBar/AppBar";
 
-const App =  (props) => {
-  const Hi = (event) => {
-    console.log("Hii" + event.target);
-    console.log(store.getState());
-    store.dispatch(commonActionCreator.userLoggedIn());
-    console.log(store.getState());
-  };
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Button
-          onClick={(event) => {
-            Hi(event);
-          }}
-        >
-          Click ME..!!
-        </Button>
-      </header>
-    </div>
+    <>
+      <Typography variant="div" component="div">
+        <AppBar></AppBar>
+      </Typography>
+      ;
+    </>
   );
-}
+};
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    user: state.user,
-    viewMode: state.viewMode,
+    state,
   };
 };
 export default connect(mapStateToProps)(App);
