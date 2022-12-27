@@ -18,7 +18,7 @@ import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { changeActionViewMode } from "../../redux/common/action";
 
 const pages = ["Products", "Pricing", "Blog"];
-const titleName = "BatMan";
+const titleName = "Movie Rulz";
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const useStyles = makeStyles({
@@ -30,7 +30,7 @@ const useStyles = makeStyles({
   },
   titleStyle: {
     alignItems: "center",
-    color: "red",
+    color: "#fff",
     display: "flex",
     left: "70%",
     position: "relative",
@@ -52,7 +52,9 @@ function ResponsiveAppBar(props) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const [isDarkMode, setDarkMode] = React.useState(props.state.mode === "lightmode" ? false : true);
+  const [isDarkMode, setDarkMode] = React.useState(
+    props.state.mode === "lightmode" ? false : true
+  );
 
   const toggleDarkMode = (checked) => {
     setDarkMode(checked);

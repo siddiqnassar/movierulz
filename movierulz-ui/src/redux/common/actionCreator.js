@@ -17,7 +17,6 @@ export const enableDarkMode = () => {
   };
 };
 
-
 export const enableLightMode = () => {
   return {
     type: actionTypes.LIGHT_MODE,

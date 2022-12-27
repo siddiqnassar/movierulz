@@ -1,16 +1,18 @@
 import "./App.css";
 import React from "react";
 import { connect } from "react-redux";
-import Typography from "@mui/material/Typography";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AppBar from "./components/AppBar/AppBar";
-
+import HomePage from "./components/HomePage/HomePage";
 const App = (props) => {
   return (
     <>
-      <Typography variant="div" component="div">
-        <AppBar></AppBar>
-      </Typography>
-      ;
+      <AppBar></AppBar>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };
