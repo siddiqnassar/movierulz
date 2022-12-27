@@ -2,8 +2,6 @@ import * as React from "react";
 import { makeStyles } from "@mui/styles";
 import { Typography } from "@mui/material";
 import { connect } from "react-redux";
-import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
 import { useEffect, useState } from "react";
 import MovieCard from "../MovieCard/MovieCard";
 import { getApiResults } from "../../data/ServerResults";
@@ -29,9 +27,6 @@ function HomePage(props) {
     }
     fetchData();
   }, []);
-  const testMovieResults = () => {
-    console.log("movie results in test is ", movieResults);
-  };
   return (
     <Typography variant="div" component="div" className={props.state.mode === "lightmode"? classes.lightMode : classes.darkMode}>
       <Typography
